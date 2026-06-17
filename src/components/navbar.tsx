@@ -1,3 +1,5 @@
+"use client";
+
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
@@ -8,6 +10,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
+import { trackEvent } from "@/lib/analytics";
+
+function handleNavClick(label: string, href: string) {
+  trackEvent("nav_link_clicked", "Navbar Links", label);
+}
 
 export default function Navbar() {
   return (
@@ -22,6 +29,7 @@ export default function Navbar() {
                   href={item.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
+                  onClick={() => handleNavClick(item.label, item.href)}
                 >
                   <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                     <item.icon className="size-full rounded-sm overflow-hidden object-contain" />
@@ -55,6 +63,7 @@ export default function Navbar() {
                     href={social.url}
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
+                    onClick={() => handleNavClick(name, social.url)}
                   >
                     <DockIcon className="rounded-3xl cursor-pointer size-full bg-background p-0 text-muted-foreground hover:text-foreground hover:bg-muted backdrop-blur-3xl border border-border transition-colors">
                       <IconComponent className="size-full rounded-sm overflow-hidden object-contain" />
