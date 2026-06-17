@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import Markdown from "react-markdown";
+import { trackEvent } from "@/lib/analytics";
 
 function ProjectImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -69,6 +70,7 @@ export function ProjectCard({
           target="_blank"
           rel="noopener noreferrer"
           className="block"
+          onClick={() => trackEvent("project_clicked", "Projects", title)}
         >
           {video ? (
             <video
@@ -98,6 +100,7 @@ export function ProjectCard({
                 <Badge
                   className="flex items-center gap-1.5 text-xs bg-black text-white hover:bg-black/90"
                   variant="default"
+                  onClick={() => trackEvent("project_link_clicked", "Projects", `${link.type} for ${title}`)}
                 >
                   {link.icon}
                   {link.type}
@@ -117,6 +120,7 @@ export function ProjectCard({
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
               aria-label={`Open ${title}`}
+              onClick={() => trackEvent("project_title_clicked", "Projects", title)}
             >
               <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>

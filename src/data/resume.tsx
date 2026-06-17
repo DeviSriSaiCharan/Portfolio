@@ -79,6 +79,9 @@ export const DATA = {
       description:
         "Worked on a production SaaS platform built with Angular, NestJS, TypeScript, and PostgreSQL. Cut API response times by 7x (700ms → <100ms) by identifying and fixing slow database queries with targeted indexing. Refactored a data processing bottleneck from O(N²) to O(N) using hash maps, and parallelized independent operations to improve throughput. Fixed sluggish list rendering in Angular by introducing virtual and infinite scrolling for large datasets. Also tightened up authentication security with salted password hashing, and contributed 30+ pull requests across the codebase.",
     },
+  ],
+
+  openSource: [
     {
       company: "Twenty CRM",
       href: "https://github.com/twentyhq/twenty",
@@ -90,6 +93,16 @@ export const DATA = {
       end: "Present",
       description:
         "Contributed bug fixes to Twenty, a YC S23-backed open source CRM. Fixed a scroll regression in the timeline side panel — when a user scrolled down to load more activities, the page would jump back to the top every time. Solved this by separating the initial fetch loading state from the pagination loading state, so the UI knows when to show a skeleton vs. a 'loading more' indicator. Also fixed a broken delete flow where removing a record from a side panel would incorrectly redirect the user away from their current page. After fixing the navigation, discovered and fixed a second issue where deleted records left ghost chips behind in the UI that only disappeared on a full page refresh — solved with a Jotai-based state fallback that survives component remounts during bulk deletes.",
+      prs: [
+        {
+          label: "PR-#20896",
+          href: "https://github.com/twentyhq/twenty/pull/20896",
+        },
+        {
+          label: "PR-#21391",
+          href: "https://github.com/twentyhq/twenty/pull/21391",
+        }
+      ],
     },
     {
       company: "Bruno",
@@ -102,6 +115,12 @@ export const DATA = {
       end: "Present",
       description:
         "Fixed a misleading success notification in the workspace open flow. The app was showing a 'Workspace opened successfully' toast even when the user cancelled the folder picker without selecting anything. Added a check to confirm a workspace was actually selected before triggering the success message.",
+      prs: [
+        {
+          label: "#PR-8096",
+          href: "https://github.com/usebruno/bruno/pull/8096",
+        },
+      ],
     },
   ],
 
