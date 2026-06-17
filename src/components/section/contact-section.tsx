@@ -17,6 +17,7 @@ export default function ContactSection() {
             maskImage: "linear-gradient(to bottom, black, transparent)",
             WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
           }}
+          color="#40C463"
         />
       </div>
       <div className="relative flex flex-col items-center gap-4 text-center">
