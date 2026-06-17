@@ -12,13 +12,13 @@ import { Redis } from "@/components/ui/svgs/redis"
 import { NestJS } from "@/components/ui/svgs/nestjs";
 
 export const DATA = {
-  name: "Charan",
+  name: "Devi Sri Sai Charan",
   initials: "N",
   url: "https://dillion.io",
   location: "Vijayawada, Andhra Pradesh",
   locationLink: "https://maps.app.goo.gl/XH5Zz7i4u29RyycD9",
   description:
-    "Most of my time is spent fixing bugs. The rest is spent creating future debugging opportunities",
+    "Broke production, fixed production, added it to my resume. They call that an internship.",
   summary:
     "I'm a final-year Computer Engineering student at SRM University AP, graduating in 2026 with a 9.0 GPA. I spent the last six months at [Kelp Global](https://kelpglobal.com) building production features — cutting API response times by 7x and shipping fixes across a full TypeScript stack. Outside of work, I contribute to open source: I've merged fixes in [Twenty CRM](https://github.com/twentyhq/twenty) (a YC S23 CRM used by thousands) and [Bruno](https://github.com/usebruno/bruno), an open source API client. I enjoy debugging systems, understanding why things break, and writing code that's easy for the next person to follow. Currently looking for full-time SDE or Full Stack Developer roles starting mid-2026.",
   avatarUrl: "/me.png",
