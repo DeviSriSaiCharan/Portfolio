@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import { ChevronDown, ChevronRight, GitPullRequest } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 function LogoImage({ src, alt }: { src: string; alt: string }) {
   const [imageError, setImageError] = useState(false);
@@ -83,7 +84,7 @@ export default function OpenSourceSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex"
-                        >
+                          onClick={(e) => {e.stopPropagation(); trackEvent("pr_link_clicked", "Opensource Contribution", `${item.company}-${pr.label}`);}}>
                           <Badge variant="outline" className="group inline-flex items-center gap-2 text-[11px] font-medium h-7 px-2.5">
                             <GitPullRequest className="h-3.5 w-3.5 text-muted-foreground group-hover:text-foreground" />
                             {pr.label}
